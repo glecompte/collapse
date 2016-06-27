@@ -107,6 +107,7 @@ const Collapse = React.createClass({
         openAnimation: this.state.openAnimation,
         children: child.props.children,
         onItemClick: this.onClickItem(key).bind(this),
+        className: child.props.className
       };
 
       return <CollapsePanel {...props} />;
