@@ -14,6 +14,7 @@ const CollapsePanel = React.createClass({
     ]),
     isActive: PropTypes.bool,
     onItemClick: PropTypes.func,
+    className: PropTypes.string
   },
 
   getDefaultProps() {
@@ -29,10 +30,10 @@ const CollapsePanel = React.createClass({
   },
 
   render() {
-    const { prefixCls, header, children, isActive } = this.props;
+    const { prefixCls, header, children, isActive, className } = this.props;
     const headerCls = `${prefixCls}-header`;
     return (
-      <div className={`${prefixCls}-item`}>
+      <div className={className ? className + ' ' + `${prefixCls}-item` : `${prefixCls}-item`}>
         <div
           className={headerCls}
           onClick={this.handleItemClick}
